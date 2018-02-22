@@ -1,0 +1,14 @@
+#woman {
+  background: url('../images/woman.jpg');
+  width: 364px;
+  height: 628px;
+}
+
+@keyframes walk-east {
+  from { background-position: 0; }
+  to { background-position: -10556px; }
+}
+@keyframes walk-west {
+  from { background-position: -10556px; }
+  to { background-position: 0; }
+}
