@@ -4,6 +4,7 @@ import {render} from 'react-dom';
 import {Header} from './components/Header';
 import {Home} from './components/Home';
 import {Animation} from './components/Animation';
+import {Example} from './components/Example';
 
 class App extends React.Component {
   render() {
@@ -24,10 +25,16 @@ class App extends React.Component {
 
         <div className="row">
           <div className="col-12">
-            <Animation/>
+            <Example/>
           </div>
         </div>
 
+        <div className="row">
+          <div className="col-12">
+            <Animation/>
+          </div>
+        </div>
+        
       </div>
     );
   }

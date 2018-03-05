@@ -15,9 +15,11 @@ export class Animation extends Component {
   }
 
   onMove(e) {
-    const posY = Math.abs((e.pageY - e.target.offsetTop) - 314) / 628;
-    const posX = Math.abs((e.pageX - e.target.offsetLeft) - 182) / 364;
+    const rect = e.target.getClientRects();
+    const posY = Math.abs((e.pageY - rect[0].y) - 314) / 628;
+    const posX = Math.abs((e.pageX - rect[0].x) - 182) / 364;
     const pos = Math.max(posY * 2, posX * 2);
+    // console.log(posX, posY);
     this.setState({
       style: {
         backgroundPosition: Math.round(1 + (pos * 29)) * (length / 29),
