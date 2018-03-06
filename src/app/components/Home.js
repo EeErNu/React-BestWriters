@@ -6,20 +6,24 @@ export class Home extends React.Component {
   constructor(props) {
     super();
     this.state = {
-     age: props.initialAge
+     age: parseInt(localStorage.getItem('age'), 10)  || props.initialAge,
     };
+  }
+
+  save() {
+    localStorage.setItem('age', this.state.age);
   }
 
   onMakeOlder() {
     this.setState({
-      age: this.state.age +1
-    });
+      age: this.state.age + 1
+    }, this.save);
   }
 
   onMakeYounger() {
     this.setState({
-      age: this.state.age -1
-    });
+      age: this.state.age - 1
+    }, this.save);
   }
 
   render() {

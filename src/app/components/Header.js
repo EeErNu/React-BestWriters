@@ -1,7 +1,6 @@
 import React from 'react';
 import Clock from 'react-live-clock';
 
-
 export class Header extends React.Component {
     render() {
         return (

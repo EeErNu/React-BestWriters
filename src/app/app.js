@@ -4,7 +4,7 @@ import {render} from 'react-dom';
 import {Header} from './components/Header';
 import {Home} from './components/Home';
 import {Animation} from './components/Animation';
-import {Example} from './components/Example';
+import {Todo} from './components/todo/Todo';
 
 class App extends React.Component {
   render() {
@@ -18,23 +18,17 @@ class App extends React.Component {
         </div>
 
         <div className="row">
-          <div className="col-12">
+          <div className="col-6">
             <Home initialAge={20}/>
           </div>
-        </div>
-
-        <div className="row">
-          <div className="col-12">
-            <Example/>
+          <div className="col-6">
+            <Todo/>
           </div>
-        </div>
-
-        <div className="row">
-          <div className="col-12">
+          <div className="col-6">
             <Animation/>
           </div>
         </div>
-        
+
       </div>
     );
   }
