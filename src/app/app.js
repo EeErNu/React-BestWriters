@@ -45,7 +45,7 @@ class App extends React.Component {
               <Todo/>
             </div>
             <div className="col-6">
-              <Animation/>
+              {/*<Animation/>*/}
             </div>
           </div>
 
