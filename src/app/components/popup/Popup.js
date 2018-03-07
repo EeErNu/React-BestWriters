@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import {FontColor} from '../settings/FontColor';
+import {BackColor} from '../settings/BackColor';
 
 export class Popup extends React.Component {
   constructor() {
@@ -7,9 +9,6 @@ export class Popup extends React.Component {
     this.state = {
       // By default we are not showing modal window
       showModal: false,
-
-      // Get storage color OR white
-      color: localStorage.getItem('color') || 'white'
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -26,23 +25,10 @@ export class Popup extends React.Component {
     this.setState({showModal: false});
   }
 
-  // Local storage for onChangeColor
-  save() {
-    localStorage.setItem('color', this.state.color);
-  }
-
-  // Here we are changing body background
-  onChangeColor() {
-    this.setState({color: 'red'}, this.save);
-  }
-
   render() {
-    // Declaring style variable that takes color from the constructor
-    let style = {
-      backgroundColor: this.state.color
-    };
+
     return (
-      <div style={style}>
+      <div>
         <button onClick={this.handleOpenModal}>Settings</button>
         <ReactModal
           isOpen={this.state.showModal}
@@ -52,44 +38,25 @@ export class Popup extends React.Component {
             <div className="col-8">
               <h1>Settings</h1>
               <div className="row">
-                <div className="col-2">
+                <div className="col-3">
                   Change background color
                 </div>
                 <div className="col-1">
-                  <button onClick={() => this.onChangeColor()} className="btn btn-primary">Red</button>
-                </div>
-                <div className="col-1">
-                  <button onClick={() => this.onChangeColor()} className="btn btn-primary">Blue</button>
-                </div>
-                <div className="col-1">
-                  <button onClick={() => this.onChangeColor()} className="btn btn-primary">Green</button>
-                </div>
-                <div className="col-1">
-                  <button onClick={() => this.onChangeColor()} className="btn btn-primary">Black</button>
-                </div>
-                <div className="col-1">
-                  <button onClick={() => this.onChangeColor()} className="btn btn-primary">Gray</button>
+                  <BackColor/>
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-2">
+                <div className="col-3">
                   Change font color
                 </div>
-                <div className="col-4">
-                  Dropdownlist here
+                <div className="col-1">
+                  <FontColor/>
                 </div>
               </div>
 
-              <div className="row">
-                <div className="col-2">
-                  Change font size
-                </div>
-                <div className="col-4">
-                  Dropdownlist here
-                </div>
-              </div>
             </div>
+
             <div className="col-4">
               <h1>Preview</h1>
               <div className="row">
@@ -101,7 +68,7 @@ export class Popup extends React.Component {
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat. Duis aute irure
                     dolor in reprehenderit in voluptat
-e velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                    e velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
                     sint occaecat cupidatat non
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                   </p>

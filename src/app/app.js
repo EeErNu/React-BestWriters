@@ -10,45 +10,43 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      color: localStorage.getItem('color') || 'white',
+      backColor: localStorage.getItem('backColor') || 'white',
+      fontColor: localStorage.getItem('fontColor') || 'black'
     };
-  }
-
-  save() {
-    localStorage.setItem('color', this.state.color);
-  }
-
-  onChangeColor() {
-    this.setState({color: 'black'}, this.save);
   }
 
   render() {
-    let style = {
-      backgroundColor: this.state.color
+    let backColor = {
+      backgroundColor: this.state.backColor
+    };
+
+    let fontColor = {
+      backColor: this.state.fontColor
     };
     return (
-      <div style={style}>
-        <div className="container">
-          <button onClick={() => this.onChangeColor()} className="btn btn-primary">Change color</button>
+      <div style={backColor}>
+        <div style={fontColor}>
+          <div className="container">
 
-          <div className="row">
-            <div className="col-12">
-              <Header/>
+            <div className="row">
+              <div className="col-12">
+                <Header/>
+              </div>
             </div>
+
+            <div className="row">
+              <div className="col-6">
+                <Home initialAge={20}/>
+              </div>
+              <div className="col-6">
+                <Todo/>
+              </div>
+              <div className="col-6">
+                {/*<Animation/>*/}
+              </div>
+            </div>
+
           </div>
-
-          <div className="row">
-            <div className="col-6">
-              <Home initialAge={20}/>
-            </div>
-            <div className="col-6">
-              <Todo/>
-            </div>
-            <div className="col-6">
-              {/*<Animation/>*/}
-            </div>
-          </div>
-
         </div>
       </div>
     );
