@@ -16,7 +16,7 @@ export class Todo extends React.Component {
   }
 
   onChange = (event) => {
-    this.setState({ term: event.target.value }, this.save);
+    this.setState({term: event.target.value}, this.save);
   };
 
   onSubmit = (event) => {
@@ -31,10 +31,10 @@ export class Todo extends React.Component {
     return (
       <div>
         <form className="App" onSubmit={this.onSubmit}>
-          <input value={this.state.term} onChange={this.onChange} />
+          <input value={this.state.term} onChange={this.onChange}/>
           <button>Submit</button>
         </form>
-        <List items={this.state.items} />
+        <List items={this.state.items}/>
       </div>
     );
   }

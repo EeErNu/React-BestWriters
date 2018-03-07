@@ -6,7 +6,7 @@ export class Home extends React.Component {
   constructor(props) {
     super();
     this.state = {
-     age: parseInt(localStorage.getItem('age'), 10)  || props.initialAge,
+      age: parseInt(localStorage.getItem('age'), 10) || props.initialAge,
     };
   }
 

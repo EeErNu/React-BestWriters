@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   onChangeColor() {
-    this.setState({ color: 'black' }, this.save);
+    this.setState({color: 'black'}, this.save);
   }
 
   render() {
@@ -54,6 +54,7 @@ class App extends React.Component {
     );
   }
 }
+
 ReactDom.render(
   <App/>,
   window.document.getElementById('app')

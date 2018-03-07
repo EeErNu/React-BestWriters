@@ -2,7 +2,7 @@ import React from 'react';
 import ReactModal from 'react-modal';
 
 export class Popup extends React.Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
       // By default we are not showing modal window
@@ -17,13 +17,13 @@ export class Popup extends React.Component {
   }
 
   // button onClick={this.handleOpenModal} - show modal window
-  handleOpenModal () {
-    this.setState({ showModal: true });
+  handleOpenModal() {
+    this.setState({showModal: true});
   }
 
   // button onClick={this.handleCloseModal} - hide modal window
-  handleCloseModal () {
-    this.setState({ showModal: false });
+  handleCloseModal() {
+    this.setState({showModal: false});
   }
 
   // Local storage for onChangeColor
@@ -33,10 +33,10 @@ export class Popup extends React.Component {
 
   // Here we are changing body background
   onChangeColor() {
-    this.setState({ color: 'red' }, this.save);
+    this.setState({color: 'red'}, this.save);
   }
 
-  render () {
+  render() {
     // Declaring style variable that takes color from the constructor
     let style = {
       backgroundColor: this.state.color
@@ -96,9 +96,13 @@ export class Popup extends React.Component {
                 <div className="col-12">
                   <h3>Lorem Ipsum</h3>
                   <p>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure
+                    dolor in reprehenderit in voluptat
+e velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                    sint occaecat cupidatat non
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                   </p>
                 </div>
