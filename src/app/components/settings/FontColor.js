@@ -5,7 +5,7 @@ export class FontColor extends React.Component {
   constructor() {
     super();
     this.state = {
-      fontColor: localStorage.getItem('fontColor') || 'black'
+      fontColor: parseInt(localStorage.getItem('fontColor'), 10) || 'black'
     };
   }
 

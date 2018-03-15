@@ -2,6 +2,7 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import {FontColor} from '../settings/FontColor';
 import {BackColor} from '../settings/BackColor';
+import {FontSize} from '../settings/FontSize';
 
 export class Popup extends React.Component {
   constructor() {
@@ -52,6 +53,15 @@ export class Popup extends React.Component {
                 </div>
                 <div className="col-1">
                   <FontColor/>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-3">
+                  Change font size
+                </div>
+                <div className="col-1">
+                  <FontSize/>
                 </div>
               </div>
 

@@ -11,7 +11,8 @@ class App extends React.Component {
     super();
     this.state = {
       backColor: localStorage.getItem('backColor') || 'white',
-      fontColor: localStorage.getItem('fontColor') || 'black'
+      fontColor: localStorage.getItem('fontColor') || 'black',
+      fontSize: localStorage.getItem('fontSize') || 14
     };
   }
 
@@ -23,29 +24,36 @@ class App extends React.Component {
     let fontColor = {
       backColor: this.state.fontColor
     };
+
+    let fontSize = {
+      fontSize: this.state.fontSize + 'px'
+    };
+
     return (
       <div style={backColor}>
         <div style={fontColor}>
-          <div className="container">
+          <div style={fontSize}>
+            <div className="container">
 
-            <div className="row">
-              <div className="col-12">
-                <Header/>
+              <div className="row">
+                <div className="col-12">
+                  <Header/>
+                </div>
               </div>
+
+              <div className="row">
+                <div className="col-6">
+                  <Home initialAge={20}/>
+                </div>
+                <div className="col-6">
+                  <Todo/>
+                </div>
+                <div className="col-6">
+                  {/*<Animation/>*/}
+                </div>
+              </div>
+
             </div>
-
-            <div className="row">
-              <div className="col-6">
-                <Home initialAge={20}/>
-              </div>
-              <div className="col-6">
-                <Todo/>
-              </div>
-              <div className="col-6">
-                {/*<Animation/>*/}
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
